@@ -22,6 +22,10 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 // Contact form endpoint
 app.post('/api/contact', [
   body('name').trim().notEmpty().withMessage('Name is required'),
