@@ -1064,7 +1064,7 @@ animation: slideIn4 16s ease-in-out infinite;
         </div>
       </section>
       {/* Projects Section */}
-      <section id="projects" className="py-20 min-h-screen flex items-center">
+      <section id="projects" className="py-20 min-h-screen flex items-center relative z-10">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-16 text-center">
             <span className="text-[#64FFDA]">Featured</span> Projects
@@ -1072,15 +1072,16 @@ animation: slideIn4 16s ease-in-out infinite;
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-20"
           >
             {projects.map((project) => (
               <motion.div
                 key={project.id}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-[#112240] rounded-lg overflow-hidden cursor-pointer"
+                className="bg-[#112240] rounded-lg overflow-hidden cursor-pointer relative z-30"
                 onClick={() => handleProjectClick(project)}
+                style={{ pointerEvents: "auto" }}
               >
                 <div className="relative group">
                   <div className="absolute -inset-2 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
@@ -1171,7 +1172,7 @@ animation: slideIn4 16s ease-in-out infinite;
         </div>
       </section>
       {/* Contact Section */}
-      <section id="contact" className="py-20 min-h-screen flex items-center">
+      <section id="contact" className="py-20 min-h-screen flex items-center relative z-10">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-16 text-center">
             <span className="text-[#64FFDA]">Get In</span> Touch
@@ -1179,14 +1180,14 @@ animation: slideIn4 16s ease-in-out infinite;
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="max-w-3xl mx-auto bg-[#112240] p-8 rounded-lg shadow-lg"
+            className="max-w-3xl mx-auto bg-[#112240] p-8 rounded-lg shadow-lg relative z-20"
           >
             <p className="text-center text-gray-300 mb-8">
               I'm currently looking for new opportunities. Whether you have a
               question or just want to say hi, I'll try my best to get back to
               you!
             </p>
-            <form className="space-y-6" onSubmit={async (e) => {
+            <form className="space-y-6 relative z-30" onSubmit={async (e) => {
               e.preventDefault();
               const formData = {
                 name: e.target.name.value,
@@ -1196,7 +1197,7 @@ animation: slideIn4 16s ease-in-out infinite;
               };
 
               try {
-                const response = await fetch('http://localhost:5000/api/contact', {
+                const response = await fetch('https://saireddyganapuram.onrender.com/api/contact', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -1237,9 +1238,11 @@ animation: slideIn4 16s ease-in-out infinite;
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
                     placeholder="Your Name"
                     required
+                    style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                   />
                 </div>
                 <div>
@@ -1249,9 +1252,11 @@ animation: slideIn4 16s ease-in-out infinite;
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
                     placeholder="Your Email"
                     required
+                    style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                   />
                 </div>
               </div>
@@ -1262,9 +1267,11 @@ animation: slideIn4 16s ease-in-out infinite;
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
                   placeholder="Subject"
                   required
+                  style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                 />
               </div>
               <div>
@@ -1273,26 +1280,30 @@ animation: slideIn4 16s ease-in-out infinite;
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={6}
                   className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
                   placeholder="Your Message"
                   required
+                  style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="bg-[#64FFDA] text-[#0A192F] font-semibold px-8 py-3 rounded hover:opacity-90 transition-all !rounded-button whitespace-nowrap cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 Send Message
               </button>
             </form>
-            <div className="mt-10 flex justify-center space-x-8">
+            <div className="mt-10 flex justify-center space-x-8 relative z-30">
               <a
                 href="https://github.com/saireddyganapuram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="GitHub"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 <i className="fab fa-github"></i>
               </a>
@@ -1302,6 +1313,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="LinkedIn"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 <i className="fab fa-linkedin"></i>
               </a>
@@ -1311,6 +1323,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="Instagram"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 <i className="fab fa-instagram"></i>
               </a>
@@ -1318,6 +1331,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 href="mailto:gsaireddy2005@gmail.com"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="Email"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 <i className="fas fa-envelope"></i>
               </a>
@@ -1334,17 +1348,20 @@ animation: slideIn4 16s ease-in-out infinite;
         />
       )}
       {/* Footer */}
-      <footer className="bg-[#0A192F] py-8">
+      <footer className="bg-[#0A192F] py-8 relative z-10">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} Sai Reddy Ganapuram. All rights
               reserved.
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 relative z-20">
               <a
                 href="https://github.com/saireddyganapuram"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <i className="ri-github-fill mr-2"></i>
                 GitHub
@@ -1354,6 +1371,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
               >
                 <i className="ri-linkedin-box-fill mr-2"></i>
                 LinkedIn
@@ -1361,6 +1379,7 @@ animation: slideIn4 16s ease-in-out infinite;
               <a
                 href="mailto:gsaireddy2005@gmail.com"
                 className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
               >
                 <i className="ri-mail-fill mr-2"></i>
                 Email
