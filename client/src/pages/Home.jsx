@@ -10,7 +10,7 @@ import OrganDonationPlatform from "../assets/organ.png";
 import AIagent from "../assets/aiagent.png";
 import CodeReviewer from "../assets/aireviewer.png";
 import AISummarizer from "../assets/aisummarizer.png";
-import SaiReddy from "../assets/image.png";
+import SaiReddy from "../assets/image1.png";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 import { earthTextures } from "../assets/textures";
@@ -241,8 +241,8 @@ const HeroAnimation = () => {
       const homeSectionRect = homeSection.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Calculate a fixed size with strict maximum
-      const maxHeight = Math.min(600, viewportHeight * 0.6);
+      // Calculate a responsive size
+      const maxHeight = Math.min(600, Math.max(500, viewportHeight * 0.6));
 
       // Check if we're scrolling away from the home section
       if (homeSectionRect.bottom < 0) {
@@ -259,12 +259,6 @@ const HeroAnimation = () => {
 
         // Force scale to 1 to prevent any enlarging and maintain the 60px right/80px down offset
         containerRef.current.style.transform = 'scale(1) translate(60px, 80px)';
-
-        // If scrolling away, slightly reduce the size for a smooth transition
-        if (homeSectionRect.bottom < viewportHeight) {
-          const scale = Math.max(0.8, homeSectionRect.bottom / viewportHeight);
-          containerRef.current.style.transform = `scale(${scale}) translate(60px, 80px)`;
-        }
       }
     };
 
@@ -670,11 +664,11 @@ animation: slideIn4 16s ease-in-out infinite;
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center pt-20 relative overflow-hidden"
+        className="min-h-screen flex items-center pt-20 relative overflow-hidden px-4 sm:px-6 lg:px-8"
         style={{
           position: "relative",
           zIndex: 1,
-          isolation: "isolate" // Creates a new stacking context
+          isolation: "isolate"
         }}
       >
         <Particles
@@ -728,7 +722,7 @@ animation: slideIn4 16s ease-in-out infinite;
             type: "spring",
             stiffness: 100,
           }}
-          className="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center relative z-10"
         >
           <motion.div
             initial={{ x: -200, rotate: -5, opacity: 0 }}
@@ -739,7 +733,7 @@ animation: slideIn4 16s ease-in-out infinite;
               stiffness: 50,
               delay: 0.3,
             }}
-            className="md:w-1/2 flex flex-col items-start space-y-6"
+            className="w-full md:w-1/2 flex flex-col items-start space-y-4 sm:space-y-6 md:pl-8 lg:pl-12"
           >
             <motion.p
               initial={{ y: 30, opacity: 0 }}
@@ -750,7 +744,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 stiffness: 100,
                 delay: 0.5,
               }}
-              className="text-pink-400 font-mono"
+              className="text-pink-400 font-mono text-sm sm:text-base"
             >
               Hi, my name is
             </motion.p>
@@ -763,7 +757,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 stiffness: 100,
                 delay: 0.7,
               }}
-              className="text-5xl md:text-7xl font-bold text-white relative"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-white relative"
             >
               <motion.span
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -788,14 +782,14 @@ animation: slideIn4 16s ease-in-out infinite;
                 stiffness: 100,
                 delay: 1.1,
               }}
-              className="text-3xl md:text-5xl font-semibold text-gray-400"
+              className="text-2xl sm:text-3xl md:text-5xl font-semibold text-gray-400"
             >
               <span>I'm a&nbsp;</span>
               <Typewriter
                 options={{
                   strings: [
                     "Full Stack Developer",
-                    "Python Developer",
+                    "Python Programmer",
                     "DevOps Enthusiast",
                   ],
                   autoStart: true,
@@ -814,7 +808,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 stiffness: 100,
                 delay: 1.3,
               }}
-              className="text-gray-400 text-lg max-w-lg"
+              className="text-base sm:text-lg text-gray-400 max-w-lg"
             >
               Crafting scalable web solutions using cutting-edge technologies. I
               build exceptional digital experiences that combine functionality
@@ -838,7 +832,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection("projects")}
-                className="relative bg-[#64FFDA] text-[#0A192F] font-semibold px-6 py-3 rounded overflow-hidden group"
+                className="relative bg-[#64FFDA] text-[#0A192F] font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded overflow-hidden group text-sm sm:text-base"
               >
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -872,23 +866,23 @@ animation: slideIn4 16s ease-in-out infinite;
               stiffness: 50,
               delay: 0.5,
             }}
-            className="md:w-1/2 mt-10 md:mt-0"
+            className="w-full md:w-1/2 mt-10 md:mt-0 hidden md:block"
           >
             <div
-              className="relative mt-20"
+              className="relative mt-10 sm:mt-20"
               style={{
                 width: "100%",
                 maxWidth: "100%",
-                height: "600px", // Fixed height instead of vh
-                maxHeight: "600px",
-                minHeight: "500px",
+                height: "auto",
+                maxHeight: "900px",
+                minHeight: "700px",
                 margin: "0 auto",
                 position: "relative",
                 overflow: "hidden",
-                transform: "scale(1)", // Force scale to 1
+                transform: "scale(1)",
                 transformOrigin: "center center",
-                marginRight: "-60px", // Move 60px to the right
-                marginBottom: "80px"  // Move 80px down
+                marginRight: "0",
+                marginBottom: "20px"
               }}
             >
               <motion.div
@@ -917,20 +911,19 @@ animation: slideIn4 16s ease-in-out infinite;
         </motion.div>
       </section>
       {/* About Section */}
-      <section id="about" className="py-20 min-h-screen flex items-center">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+      <section id="about" className="py-12 sm:py-20 min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center">
             <span className="text-[#64FFDA]">About</span> Me
           </h2>
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="flex flex-col md:flex-row items-center gap-12"
+            className="flex flex-col md:flex-row items-center gap-8 sm:gap-12"
           >
-            <div className="md:w-1/3 max-w-[300px] mx-auto">
+            <div className="w-full md:w-1/3 max-w-[300px] mx-auto">
               <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <div className="relative overflow-hidden rounded-lg">
+                <div className="relative overflow-hidden rounded-full border-2 border-[#64FFDA] border-solid">
                   <img
                     src={SaiReddy}
                     alt="Sai Reddy Ganapuram"
@@ -939,22 +932,22 @@ animation: slideIn4 16s ease-in-out infinite;
                 </div>
               </div>
             </div>
-            <div className="md:w-2/3">
-              <p className="text-lg text-gray-300 mb-6">
+            <div className="w-full md:w-2/3">
+              <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
                 Hi, I'm Sai Reddy Ganapuram — a passionate full-stack developer
                 with a strong focus on the MERN stack (MongoDB, Express.js,
                 React, Node.js) and Python. I began my development journey in
                 2023, and since then, I've been dedicated to building clean,
                 scalable, and high-performing web applications.
               </p>
-              <p className="text-lg text-gray-300 mb-6">
+              <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
                 My skillset spans both frontend and backend development, and I
                 enjoy using Python for automation, scripting, and integrating
                 AI-driven features into modern applications. I'm also exploring
                 DevOps practices to streamline deployment workflows and ensure
                 smooth project scalability.
               </p>
-              <p className="text-lg text-gray-300 mb-6">
+              <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
                 I'm constantly learning and experimenting with new technologies,
                 contributing to open-source projects, and sharing knowledge
                 through blogs and online communities. For me, coding is not just
@@ -968,24 +961,24 @@ animation: slideIn4 16s ease-in-out infinite;
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-20 bg-black/30 min-h-screen flex items-center backdrop-blur-sm"
+        className="py-12 sm:py-20 bg-black/30 min-h-screen flex items-center backdrop-blur-sm px-4 sm:px-6 lg:px-8"
       >
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center">
             <span className="text-[#64FFDA]">My</span> Skills
           </h2>
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10"
           >
             {/* Frontend Skills */}
-            <div className="bg-black/40 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
-              <h3 className="text-2xl font-semibold mb-6 text-white flex items-center">
+            <div className="bg-black/40 p-6 sm:p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-white flex items-center">
                 <i className="fas fa-code text-[#64FFDA] mr-3"></i>
                 Frontend
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { name: "React", icon: "ri-reactjs-fill" },
                   { name: "JavaScript", icon: "ri-javascript-line" },
@@ -996,10 +989,10 @@ animation: slideIn4 16s ease-in-out infinite;
                 ].map((skill, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer"
+                    className="flex items-center p-2 sm:p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base"
                   >
                     <i
-                      className={`${skill.icon} text-[#64FFDA] text-xl mr-3`}
+                      className={`${skill.icon} text-[#64FFDA] text-lg sm:text-xl mr-2 sm:mr-3`}
                     ></i>
                     <span>{skill.name}</span>
                   </div>
@@ -1007,12 +1000,12 @@ animation: slideIn4 16s ease-in-out infinite;
               </div>
             </div>
             {/* Backend Skills */}
-            <div className="bg-black/40 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
-              <h3 className="text-2xl font-semibold mb-6 text-white flex items-center">
+            <div className="bg-black/40 p-6 sm:p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-white flex items-center">
                 <i className="fas fa-server text-[#64FFDA] mr-3"></i>
                 Backend
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { name: "Node.js", icon: "ri-nodejs-line" },
                   { name: "Express.js", icon: "ri-server-fill" },
@@ -1023,10 +1016,10 @@ animation: slideIn4 16s ease-in-out infinite;
                 ].map((skill, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer"
+                    className="flex items-center p-2 sm:p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base"
                   >
                     <i
-                      className={`${skill.icon} text-[#64FFDA] text-xl mr-3`}
+                      className={`${skill.icon} text-[#64FFDA] text-lg sm:text-xl mr-2 sm:mr-3`}
                     ></i>
                     <span>{skill.name}</span>
                   </div>
@@ -1034,12 +1027,12 @@ animation: slideIn4 16s ease-in-out infinite;
               </div>
             </div>
             {/* Tools & Others */}
-            <div className="bg-black/40 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
-              <h3 className="text-2xl font-semibold mb-6 text-white flex items-center">
+            <div className="bg-black/40 p-6 sm:p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white/10">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-white flex items-center">
                 <i className="fas fa-tools text-[#64FFDA] mr-3"></i>
                 Tools & Others
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { name: "Git", icon: "ri-git-merge-fill" },
                   { name: "GitHub", icon: "ri-github-fill" },
@@ -1050,10 +1043,10 @@ animation: slideIn4 16s ease-in-out infinite;
                 ].map((skill, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer"
+                    className="flex items-center p-2 sm:p-3 bg-[#1D2D50] rounded-lg hover:bg-[#233554] transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base"
                   >
                     <i
-                      className={`${skill.icon} text-[#64FFDA] text-xl mr-3`}
+                      className={`${skill.icon} text-[#64FFDA] text-lg sm:text-xl mr-2 sm:mr-3`}
                     ></i>
                     <span>{skill.name}</span>
                   </div>
@@ -1064,15 +1057,15 @@ animation: slideIn4 16s ease-in-out infinite;
         </div>
       </section>
       {/* Projects Section */}
-      <section id="projects" className="py-20 min-h-screen flex items-center relative z-10">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+      <section id="projects" className="py-12 sm:py-20 min-h-screen flex items-center relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center">
             <span className="text-[#64FFDA]">Featured</span> Projects
           </h2>
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-20"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-20"
           >
             {projects.map((project) => (
               <motion.div
@@ -1089,13 +1082,13 @@ animation: slideIn4 16s ease-in-out infinite;
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-40 sm:h-48 object-cover"
                     />
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#64FFDA] mb-2">{project.title}</h3>
-                  <p className="text-gray-400">{project.overview.substring(0, 150)}...</p>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#64FFDA] mb-2">{project.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-400">{project.overview.substring(0, 150)}...</p>
                 </div>
               </motion.div>
             ))}
@@ -1105,10 +1098,10 @@ animation: slideIn4 16s ease-in-out infinite;
       {/* Education Section */}
       <section
         id="education"
-        className="py-20 bg-[#112240] min-h-screen flex items-center"
+        className="py-12 sm:py-20 bg-[#112240] min-h-screen flex items-center px-4 sm:px-6 lg:px-8"
       >
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center">
             <span className="text-[#64FFDA]">Education</span> & Certifications
           </h2>
           <div
@@ -1117,17 +1110,17 @@ animation: slideIn4 16s ease-in-out infinite;
             className="max-w-3xl mx-auto"
           >
             {/* Education Timeline */}
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {/* B.Tech */}
-              <div className="relative pl-8 border-l-2 border-[#64FFDA]">
+              <div className="relative pl-6 sm:pl-8 border-l-2 border-[#64FFDA]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#64FFDA]"></div>
-                <div className="bg-[#0A192F] p-6 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-bold text-white">
-                    Bachelor of Technology in Computer Science
+                <div className="bg-[#0A192F] p-4 sm:p-6 rounded-lg shadow-lg">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                    Bachelor of Technology in Information Technology
                   </h3>
                   <p className="text-[#64FFDA] mb-2">Malla Reddy Engineering College</p>
                   <p className="text-gray-400 mb-4">2023 - 2027</p>
-                  <p className="text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300">
                     Currently pursuing B.Tech in Information Technology. Focused on web development,
                     artificial intelligence, and software engineering. Active participant in
                     coding competitions and technical events.
@@ -1136,15 +1129,15 @@ animation: slideIn4 16s ease-in-out infinite;
               </div>
 
               {/* Intermediate */}
-              <div className="relative pl-8 border-l-2 border-[#64FFDA]">
+              <div className="relative pl-6 sm:pl-8 border-l-2 border-[#64FFDA]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#64FFDA]"></div>
-                <div className="bg-[#0A192F] p-6 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-bold text-white">
+                <div className="bg-[#0A192F] p-4 sm:p-6 rounded-lg shadow-lg">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
                     Intermediate Education (MPC)
                   </h3>
                   <p className="text-[#64FFDA] mb-2">TRRS & JC</p>
                   <p className="text-gray-400 mb-4">2021 - 2023</p>
-                  <p className="text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300">
                     Completed intermediate education with Mathematics, Physics, and Chemistry.
                     Secured good academic performance and participated in various science exhibitions.
                   </p>
@@ -1152,15 +1145,15 @@ animation: slideIn4 16s ease-in-out infinite;
               </div>
 
               {/* 10th Class */}
-              <div className="relative pl-8 border-l-2 border-[#64FFDA]">
+              <div className="relative pl-6 sm:pl-8 border-l-2 border-[#64FFDA]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#64FFDA]"></div>
-                <div className="bg-[#0A192F] p-6 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-bold text-white">
+                <div className="bg-[#0A192F] p-4 sm:p-6 rounded-lg shadow-lg">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
                     Secondary School Certificate (SSC)
                   </h3>
                   <p className="text-[#64FFDA] mb-2">Zilla Parishath High School</p>
                   <p className="text-gray-400 mb-4">2020 - 2021</p>
-                  <p className="text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300">
                     Completed 10th standard with distinction. Active participant in
                     extracurricular activities and science competitions. Developed
                     strong foundation in mathematics and science.
@@ -1172,22 +1165,22 @@ animation: slideIn4 16s ease-in-out infinite;
         </div>
       </section>
       {/* Contact Section */}
-      <section id="contact" className="py-20 min-h-screen flex items-center relative z-10">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+      <section id="contact" className="py-12 sm:py-20 min-h-screen flex items-center relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center">
             <span className="text-[#64FFDA]">Get In</span> Touch
           </h2>
           <div
             ref={useIntersectionObserver({ threshold: 0.2 })}
             data-animate
-            className="max-w-3xl mx-auto bg-[#112240] p-8 rounded-lg shadow-lg relative z-20"
+            className="max-w-3xl mx-auto bg-[#112240] p-6 sm:p-8 rounded-lg shadow-lg relative z-20"
           >
-            <p className="text-center text-gray-300 mb-8">
+            <p className="text-center text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
               I'm currently looking for new opportunities. Whether you have a
               question or just want to say hi, I'll try my best to get back to
               you!
             </p>
-            <form className="space-y-6 relative z-30" onSubmit={async (e) => {
+            <form className="space-y-4 sm:space-y-6 relative z-30" onSubmit={async (e) => {
               e.preventDefault();
               const formData = {
                 name: e.target.name.value,
@@ -1230,30 +1223,30 @@ animation: slideIn4 16s ease-in-out infinite;
                 });
               }
             }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-gray-300 mb-2 text-sm sm:text-base">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
+                    className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-[#64FFDA] transition-colors"
                     placeholder="Your Name"
                     required
                     style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-gray-300 mb-2 text-sm sm:text-base">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
+                    className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-[#64FFDA] transition-colors"
                     placeholder="Your Email"
                     required
                     style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
@@ -1261,28 +1254,28 @@ animation: slideIn4 16s ease-in-out infinite;
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm sm:text-base">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
+                  className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-[#64FFDA] transition-colors"
                   placeholder="Subject"
                   required
                   style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-gray-300 mb-2 text-sm sm:text-base">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={6}
-                  className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-[#64FFDA] transition-colors"
+                  rows={4}
+                  className="w-full bg-[#0A192F] text-gray-300 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-[#64FFDA] transition-colors"
                   placeholder="Your Message"
                   required
                   style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
@@ -1290,18 +1283,18 @@ animation: slideIn4 16s ease-in-out infinite;
               </div>
               <button
                 type="submit"
-                className="bg-[#64FFDA] text-[#0A192F] font-semibold px-8 py-3 rounded hover:opacity-90 transition-all !rounded-button whitespace-nowrap cursor-pointer"
+                className="bg-[#64FFDA] text-[#0A192F] font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded hover:opacity-90 transition-all !rounded-button whitespace-nowrap cursor-pointer text-sm sm:text-base"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
                 Send Message
               </button>
             </form>
-            <div className="mt-10 flex justify-center space-x-8 relative z-30">
+            <div className="mt-8 sm:mt-10 flex justify-center space-x-6 sm:space-x-8 relative z-30">
               <a
                 href="https://github.com/saireddyganapuram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-2xl sm:text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="GitHub"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
@@ -1311,7 +1304,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 href="https://www.linkedin.com/in/saireddyganapuram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-2xl sm:text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="LinkedIn"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
@@ -1321,7 +1314,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 href="https://instagram.com/sai_reddy__05"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-2xl sm:text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="Instagram"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
@@ -1329,7 +1322,7 @@ animation: slideIn4 16s ease-in-out infinite;
               </a>
               <a
                 href="mailto:gsaireddy2005@gmail.com"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-4xl !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-2xl sm:text-4xl !rounded-button whitespace-nowrap cursor-pointer"
                 title="Email"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 40 }}
               >
@@ -1348,17 +1341,17 @@ animation: slideIn4 16s ease-in-out infinite;
         />
       )}
       {/* Footer */}
-      <footer className="bg-[#0A192F] py-8 relative z-10">
-        <div className="container mx-auto px-6">
+      <footer className="bg-[#0A192F] py-6 sm:py-8 relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-gray-400 text-xs sm:text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} Sai Reddy Ganapuram. All rights
               reserved.
             </p>
             <div className="flex items-center space-x-4 relative z-20">
               <a
                 href="https://github.com/saireddyganapuram"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-xs sm:text-sm !rounded-button whitespace-nowrap cursor-pointer"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1370,7 +1363,7 @@ animation: slideIn4 16s ease-in-out infinite;
                 href="https://www.linkedin.com/in/saireddyganapuram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-xs sm:text-sm !rounded-button whitespace-nowrap cursor-pointer"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
               >
                 <i className="ri-linkedin-box-fill mr-2"></i>
@@ -1378,7 +1371,7 @@ animation: slideIn4 16s ease-in-out infinite;
               </a>
               <a
                 href="mailto:gsaireddy2005@gmail.com"
-                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-sm !rounded-button whitespace-nowrap cursor-pointer"
+                className="text-gray-400 hover:text-[#64FFDA] transition-colors text-xs sm:text-sm !rounded-button whitespace-nowrap cursor-pointer"
                 style={{ pointerEvents: "auto", position: "relative", zIndex: 30 }}
               >
                 <i className="ri-mail-fill mr-2"></i>

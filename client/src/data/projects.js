@@ -8,21 +8,20 @@ export const projects = [
     id: 1,
     title: 'Organ Donation Platform',
     image: OrganDonationPlatform,
-    overview: 'A comprehensive platform connecting organ donors and recipients, featuring real-time matching algorithms, medical data management, and secure communication channels. The platform aims to streamline the organ donation process and save more lives.',
+    overview: 'A web-based system that connects organ donors and recipients with features like real-time matching, secure data management, and hospital integration. It aims to streamline the donation process and improve emergency response efficiency.',
     features: [
-      'Real-time donor-recipient matching system',
-      'Secure medical data management',
-      'Automated notification system',
-      'Hospital integration capabilities',
-      'Emergency response system',
-      'Donor-recipient communication platform'
+      'Donor and recipient registration with Aadhaar verification',
+      'Real-time organ matching and availability tracking',
+      'Patient form with medical report upload',
+      'OTP-based secure login',
+      'Integration with hospitals and NGOs',
+      'Automated notifications and history tracking',
+      'Organ search with filters',
+      'FAQ and help section'
     ],
     technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB', 'Express.js'],
     implementation: [
-      'Implemented real-time matching algorithm for efficient donor-recipient pairing',
-      'Developed secure data encryption for sensitive medical information',
-      'Created automated notification system for emergency cases',
-      'Built scalable architecture to handle high traffic during emergencies'
+      'Built using the MERN stack, the platform uses Twilio for OTP-based login and JWT for session management. Patient data and organ records are securely stored in MongoDB. The system includes dynamic forms, file uploads, and a real-time organ search feature that filters data from hospitals and NGOs. It’s designed to be scalable and secure for broader institutional adoption.'
     ],
     githubLink: 'https://github.com/saireddyganapuram/organ-donation',
     demoLink: '#'
@@ -31,21 +30,18 @@ export const projects = [
     id: 2,
     title: 'AI Agent',
     image: AIagent,
-    overview: 'An intelligent AI agent capable of understanding natural language, automating tasks, and providing context-aware responses using advanced language models. The agent can assist users with various tasks, from simple queries to complex problem-solving.',
+    overview: 'An AI-powered tool that generates production-ready Node.js and Express.js server code with ES6 syntax from natural language prompts. It enables instant prototyping by running the generated code in an embedded web container with a clean, VS Code-inspired interface.',
     features: [
-      'Natural Language Processing (NLP) capabilities',
-      'Context-aware conversation management',
-      'Task automation and scheduling',
-      'Multi-modal interaction (text, voice, image)',
-      'Learning and adaptation capabilities',
+      'Generates multi-file Express server projects (app.js, package.json, etc.)',
+      'Supports ES6 import/export syntax',
+      'Executes code immediately within a secure web container',
+      'Real-time feedback with run and error outputs',
+      'User-friendly, familiar UI for easy interaction',
       'Integration with various APIs and services'
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io','Gemini API'],
     implementation: [
-      'Implemented advanced NLP models for natural language understanding',
-      'Developed context management system for maintaining conversation state',
-      'Created modular architecture for easy integration of new capabilities',
-      'Built robust error handling and fallback mechanisms'
+      'Built with the MERN stack and integrated with Gemini API for advanced natural language processing, this project translates developer prompts into fully functional backend code. It dynamically creates server files, runs them live in an embedded container, and presents the output in a clean, VS Code-style interface. This system streamlines backend development by enabling fast prototyping and testing without manual setup.'
     ],
     githubLink: 'https://github.com/saireddyganapuram/ai_agent',
     demoLink: '#'
@@ -61,7 +57,6 @@ export const projects = [
       'Security vulnerability detection',
       'Performance optimization suggestions',
       'Code style consistency checks',
-      'Integration with popular IDEs and CI/CD pipelines'
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Gemini API'],
     implementation: [
@@ -77,21 +72,18 @@ export const projects = [
     id: 4,
     title: 'AI Summarizer',
     image: AISummarizer,
-    overview: 'An advanced text summarization tool that uses natural language processing to generate concise, accurate summaries while preserving key information. The system can handle various types of content, from articles to research papers, and produce summaries of different lengths.',
+    overview: 'An AI-powered platform that generates concise summaries, short notes, flashcards, quiz questions, course recommendations, and YouTube links from any text or document. It also includes a chatbot to answer user doubts based on the generated content, making it a comprehensive study assistant.',
     features: [
-      'Multi-document summarization',
-      'Customizable summary length',
-      'Key points extraction',
-      'Multiple language support',
-      'Citation and reference preservation',
-      'API integration capabilities'
+      'Generate summaries and short notes',
+      'Create flashcards and quiz questions automatically',
+      'Recommend related courses and YouTube videos',
+      'Multi-document and multi-language support',
+      'Interactive chatbot for content-based doubt resolution',
+      'API integration for easy access'
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Gemini API'],
     implementation: [
-      'Implemented state-of-the-art transformer models for text understanding',
-      'Developed custom algorithms for key information extraction',
-      'Created efficient text processing pipeline for large documents',
-      'Built scalable API for easy integration with other systems'
+      'Built on the MERN stack with Gemini API integration, this platform uses advanced NLP and transformer models to extract key information and generate various study materials. It offers a responsive frontend and a scalable backend API. The integrated chatbot uses context-aware NLP to answer questions based on generated content, enhancing user learning and engagement.'
     ],
     githubLink: 'https://github.com/saireddyganapuram/ai_summarizer',
     demoLink: '#'
