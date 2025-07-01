@@ -788,7 +788,7 @@ animation: slideIn4 16s ease-in-out infinite;
               <Typewriter
                 options={{
                   strings: [
-                    "Full Stack Developer",
+                    "MERN Stack Developer",
                     "Python Programmer",
                     "DevOps Enthusiast",
                   ],
