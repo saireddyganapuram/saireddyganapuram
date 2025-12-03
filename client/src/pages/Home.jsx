@@ -602,7 +602,7 @@ animation: slideIn4 16s ease-in-out infinite;
       <nav className="fixed top-0 w-full bg-black/30 backdrop-blur-md z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="text-2xl font-bold text-[#64FFDA]">
-            Sai<span className="text-white">.dev</span>
+            <span className="text-white"></span>
           </a>
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
@@ -934,25 +934,13 @@ animation: slideIn4 16s ease-in-out infinite;
             </div>
             <div className="w-full md:w-2/3">
               <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
-                Hi, I'm Sai Reddy Ganapuram — a passionate full-stack developer
-                with a strong focus on the MERN stack (MongoDB, Express.js,
-                React, Node.js) and Python. I began my development journey in
-                2023, and since then, I've been dedicated to building clean,
-                scalable, and high-performing web applications.
+                Hi, I'm Sai Reddy Ganapuram — I am a motivated and enthusiastic B.Tech student with a strong foundation in Information Technology, specializing in the MERN stack and DSA in Python. My learning journey has helped me build a solid understanding of both development principles and practical implementation.
               </p>
               <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
-                My skillset spans both frontend and backend development, and I
-                enjoy using Python for automation, scripting, and integrating
-                AI-driven features into modern applications. I'm also exploring
-                DevOps practices to streamline deployment workflows and ensure
-                smooth project scalability.
+                Over time, I have developed hands-on experience in building full-stack applications, automating workflows, and working with modern web technologies. Driven by curiosity, I am currently exploring DevOps to better understand how development and operations come together to create efficient, scalable systems.
               </p>
               <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
-                I'm constantly learning and experimenting with new technologies,
-                contributing to open-source projects, and sharing knowledge
-                through blogs and online communities. For me, coding is not just
-                a profession — it's a way to turn ideas into impactful digital
-                experiences.
+                I enjoy learning new tools, taking on challenges, and working in collaborative environments where I can grow and contribute meaningfully. I am now seeking opportunities to apply my skills, gain real-world experience, and advance toward becoming a capable full-stack and DevOps engineer.
               </p>
             </div>
           </div>
@@ -1036,10 +1024,10 @@ animation: slideIn4 16s ease-in-out infinite;
                 {[
                   { name: "Git", icon: "ri-git-merge-fill" },
                   { name: "GitHub", icon: "ri-github-fill" },
+                  { name: "Linux", icon: "fas fa-linux" },
                   { name: "Docker", icon: "fab fa-docker" },
                   { name: "AWS", icon: "fab fa-aws" },
                   { name: "CI/CD", icon: "ri-loop-right-fill" },
-                  { name: "Jest", icon: "fas fa-vial" },
                 ].map((skill, index) => (
                   <div
                     key={index}
@@ -1121,9 +1109,7 @@ animation: slideIn4 16s ease-in-out infinite;
                   <p className="text-[#64FFDA] mb-2">Malla Reddy Engineering College</p>
                   <p className="text-gray-400 mb-4">2023 - 2027</p>
                   <p className="text-sm sm:text-base text-gray-300">
-                    Currently pursuing B.Tech in Information Technology. Focused on web development,
-                    artificial intelligence, and software engineering. Active participant in
-                    coding competitions and technical events.
+                    Currently pursuing B.Tech in Information Technology.
                   </p>
                 </div>
               </div>
@@ -1135,11 +1121,10 @@ animation: slideIn4 16s ease-in-out infinite;
                   <h3 className="text-lg sm:text-xl font-bold text-white">
                     Intermediate Education (MPC)
                   </h3>
-                  <p className="text-[#64FFDA] mb-2">TRRS & JC</p>
+                  <p className="text-[#64FFDA] mb-2">Telangana State Residential School & Junior College</p>
                   <p className="text-gray-400 mb-4">2021 - 2023</p>
                   <p className="text-sm sm:text-base text-gray-300">
                     Completed intermediate education with Mathematics, Physics, and Chemistry.
-                    Secured good academic performance and participated in various science exhibitions.
                   </p>
                 </div>
               </div>
@@ -1154,9 +1139,7 @@ animation: slideIn4 16s ease-in-out infinite;
                   <p className="text-[#64FFDA] mb-2">Zilla Parishath High School</p>
                   <p className="text-gray-400 mb-4">2020 - 2021</p>
                   <p className="text-sm sm:text-base text-gray-300">
-                    Completed 10th standard with distinction. Active participant in
-                    extracurricular activities and science competitions. Developed
-                    strong foundation in mathematics and science.
+                    Completed 10th standard with distinction.
                   </p>
                 </div>
               </div>
