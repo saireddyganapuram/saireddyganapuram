@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Toast = ({ message, type = 'success', onClose }) => {
@@ -16,9 +17,11 @@ const Toast = ({ message, type = 'success', onClose }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
-        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
-          type === 'success' ? 'bg-[#64FFDA] text-[#0A192F]' : 'bg-red-500 text-white'
-        }`}
+        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg z-50 ${type === 'success' ? 'bg-[#64FFDA] text-[#0A192F]' : 'bg-red-500 text-white'
+          }`}
+        role="alert"
+        aria-live="polite"
+        aria-atomic="true"
       >
         <div className="flex items-center space-x-3">
           {type === 'success' ? (
@@ -30,13 +33,24 @@ const Toast = ({ message, type = 'success', onClose }) => {
           <button
             onClick={onClose}
             className="ml-4 hover:opacity-80 transition-opacity"
+            aria-label="Close notification"
           >
-            <i className="fas fa-times"></i>
+            <i className="fas fa-times" aria-hidden="true"></i>
           </button>
         </div>
       </motion.div>
     </AnimatePresence>
   );
+};
+
+Toast.propTypes = {
+  message: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['success', 'error']),
+  onClose: PropTypes.func.isRequired,
+};
+
+Toast.defaultProps = {
+  type: 'success',
 };
 
 export default Toast; 

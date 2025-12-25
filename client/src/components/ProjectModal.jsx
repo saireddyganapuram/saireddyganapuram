@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ProjectModal = ({ project, onClose }) => {
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (project) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [project, onClose]);
   if (!project) return null;
 
   return (
@@ -12,6 +32,9 @@ const ProjectModal = ({ project, onClose }) => {
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         onClick={onClose}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -22,12 +45,13 @@ const ProjectModal = ({ project, onClose }) => {
         >
           <div className="p-6">
             <div className="flex justify-between items-start mb-6">
-              <h2 className="text-2xl font-bold text-[#64FFDA]">{project.title}</h2>
+              <h2 id="modal-title" className="text-2xl font-bold text-[#64FFDA]">{project.title}</h2>
               <button
                 onClick={onClose}
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Close modal"
               >
-                <i className="fas fa-times text-xl"></i>
+                <i className="fas fa-times text-xl" aria-hidden="true"></i>
               </button>
             </div>
 
@@ -114,6 +138,20 @@ const ProjectModal = ({ project, onClose }) => {
       </motion.div>
     </AnimatePresence>
   );
+};
+
+ProjectModal.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    features: PropTypes.arrayOf(PropTypes.string).isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+    implementation: PropTypes.arrayOf(PropTypes.string).isRequired,
+    githubLink: PropTypes.string.isRequired,
+    demoLink: PropTypes.string.isRequired,
+  }),
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ProjectModal; 
