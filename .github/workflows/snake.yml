@@ -8,8 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Generate Snake Animation
@@ -18,9 +19,10 @@ jobs:
           github_user_name: saireddyganapuram
           outputs: snake.svg
 
-      - name: Push Animation
+      - name: Push Snake Animation to Output Branch
         uses: EndBug/add-and-commit@v7
         with:
           add: "snake.svg"
           message: "Generated snake animation"
           branch: output
+          branch_mode: create       # << this allows automatic branch creation
