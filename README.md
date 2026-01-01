@@ -1,1 +1,72 @@
+<!-- Banner GIF -->
+<p align="center">
+  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/497f6b117371115.606ede8b76fa4.gif" width="700"/>
+</p>
+
+<h1 align="center">Hi 👋, I'm Sai Reddy Ganapuram</h1>
+<h3 align="center">MERN Stack Developer | DevOps Learner | AI & Cloud Enthusiast 🚀</h3>
+
+<br />
+
+<!-- Typing Effect -->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=4000&color=00F700&center=true&vCenter=true&width=600&lines=B.Tech+Student;MERN+Stack+Developer;AI+%26+Cloud+Enthusiast;DevOps+Learner;Open+Source+Contributor">
+</p>
+
+---
+
+### 🧑‍💻 About Me
+- 🌱 Currently learning **Docker, Kubernetes & AWS**
+- 🔭 Working on: AI Study Assistant, LearnStream & DevOps Projects
+- 💬 Ask me about **MERN, Docker & Linux**
+- ⚡ Fun fact: *I debug more than I code*
+
+---
+
+### 🛠 Languages & Tools
+<p align="center">
+<img src="https://skillicons.dev/icons?i=react,nodejs,express,mongodb,js,html,css,tailwind,github,git,linux,docker,py,c,postman,vscode" />
+</p>
+
+---
+
+### 🚀 Connect With Me
+<p align="left">
+<a href="#"><img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white"></a>
+<a href="#"><img src="https://img.shields.io/badge/Portfolio-000?logo=vercel&logoColor=white"></a>
+<a href="#"><img src="https://img.shields.io/badge/Email-FF3131?logo=gmail&logoColor=white"></a>
+</p>
+
+---
+
+### 📊 GitHub Stats
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight" width="50%"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight" width="49%"/>
+</p>
+
+---
+
+### 🏆 GitHub Trophies
+<p align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=matrix&no-bg=true&no-frame=true&row=1&column=6" />
+</p>
+
+---
+
+### 🐍 Snake Eating Contributions (Animation)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg" />
+</p>
+
+---
+
+### 👀 Visitor Count
+<p align="center">
+  <img src="https://profile-counter.glitch.me/YOUR_USERNAME/count.svg" />
+</p>
+
+---
+
+⭐ **If you like my work, consider giving a star to my repositories!**
 
