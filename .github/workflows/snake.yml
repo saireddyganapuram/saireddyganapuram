@@ -1,0 +1,19 @@
+name: Generate Snake Animation
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: sai-reddy-ganapuram
+      - name: Push animation
+        uses: EndBug/add-and-commit@v7
+        with:
+          branch: output
+          message: "Generated snake animation"
