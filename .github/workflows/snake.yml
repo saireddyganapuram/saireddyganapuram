@@ -1,19 +1,26 @@
-name: Generate Snake Animation
+name: Generate Snake
+
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 */12 * * *"
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: Platane/snk/svg-only@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Generate Snake Animation
+        uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: sai-reddy-ganapuram
-      - name: Push animation
+          github_user_name: saireddyganapuram
+          outputs: dist/snake.svg
+
+      - name: Push Animation to Output Branch
         uses: EndBug/add-and-commit@v7
         with:
+          message: "Generated Snake Animation"
+          add: "dist/snake.svg"
           branch: output
-          message: "Generated snake animation"
