@@ -16,11 +16,11 @@ jobs:
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: saireddyganapuram
-          outputs: dist/snake.svg
+          outputs: snake.svg
 
-      - name: Push Animation to Output Branch
+      - name: Push Animation
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Generated Snake Animation"
-          add: "dist/snake.svg"
+          add: "snake.svg"
+          message: "Generated snake animation"
           branch: output
