@@ -4,14 +4,9 @@
 </p>
 
 <h1 align="center">Hi 👋, I'm Sai Reddy Ganapuram</h1>
-<h3 align="center">MERN Stack Developer | DevOps Learner | AI & Cloud Enthusiast 🚀</h3>
+<h3 align="center">MERN Stack Developer | DevOps & Cloud Enthusiast 🚀</h3>
 
 <br />
-
-<!-- Typing Effect -->
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=4000&color=00F700&center=true&vCenter=true&width=600&lines=B.Tech+Student;MERN+Stack+Developer;AI+%26+Cloud+Enthusiast;DevOps+Learner;Open+Source+Contributor">
-</p>
 
 ---
 
