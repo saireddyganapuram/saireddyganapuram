@@ -27,7 +27,7 @@
 
 ### 🚀 Connect With Me
 <p align="left">
-<a href="www.linkedin.com/in/saireddyganapuram"><img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white"></a>
+<a href="https://www.linkedin.com/in/saireddyganapuram"><img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white"></a>
 <a href="https://saireddyganapuram.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000?logo=vercel&logoColor=white"></a>
 <a href="#"><img src="https://img.shields.io/badge/Email-FF3131?logo=gmail&logoColor=white"></a>
 </p>
@@ -36,20 +36,21 @@
 
 ### 📊 GitHub Stats
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=saireddyganapuram&show_icons=true&theme=tokyonight" width="50%"/>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=saireddyganapuram&show_icons=true&theme=tokyonight" />
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=saireddyganapuram&theme=tokyonight" width="49%"/>
 </p>
 
 ---
 
-### 🏆 GitHub Trophies
+### 📈 Contribution Activity Graph
 <p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=saireddyganapuram&theme=matrix&no-bg=true&no-frame=true&row=1&column=6" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=saireddyganapuram&theme=tokyo-night" />
 </p>
+
 
 ---
 
-### 🐍 Snake Eating Contributions (Animation)
+### 🐍 Snake Eating Contributions
 <p align="center">
   <img src="https://raw.githubusercontent.com/saireddyganapuram/saireddyganapuram/output/snake.svg" />
 </p>
@@ -59,7 +60,7 @@
 
 ### 👀 Visitor Count
 <p align="center">
-  <img src="https://profile-counter.glitch.me/saireddyganapuram/count.svg" />
+  <img src="https://komarev.com/ghpvc/?username=saireddyganapuram&style=flat-square&color=blue" />
 </p>
 
 ---
