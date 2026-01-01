@@ -51,8 +51,9 @@
 
 ### 🐍 Snake Eating Contributions (Animation)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/saireddyganapuram/saireddyganapuram/output/github-contribution-grid-snake.svg" />
+  <img src="https://raw.githubusercontent.com/saireddyganapuram/saireddyganapuram/output/snake.svg" />
 </p>
+
 
 ---
 
